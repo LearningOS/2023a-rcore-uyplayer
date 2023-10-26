@@ -1,4 +1,6 @@
 //! Process management syscalls
+
+
 use crate::{
     config::MAX_SYSCALL_NUM,
     mm::page_table::translated_pa,
@@ -74,7 +76,7 @@ pub fn sys_task_info(ti: *mut TaskInfo) -> isize {
         (*ti_pa).syscall_times = get_syscall_counter();
     }
 
-    0
+    1
 }
 
 // YOUR JOB: Implement mmap.
